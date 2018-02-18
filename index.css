@@ -1,0 +1,153 @@
+body{
+  margin: 0;
+  padding: 0;
+  z-index: 0;
+ /* background-image: url('https://media.rainpos.com/232/100154552.jpg') ;
+  background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
+ background-size: cover;  */
+}
+
+#more-pets-info ul{
+  columns: 5;
+  list-style: none;
+}
+
+ li{
+  display: none;
+}
+
+
+#navigation{
+  position:absolute;
+  height: 30px;
+  width: 100%;
+  background-color: yellow;
+  top: 0;
+
+   text-align: center;
+   
+  
+}
+#navigation li{
+  display: inline-block;
+
+}
+
+#pet-search{
+ padding-top: 35px;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border:2px solid black;
+  text-align: center;
+}
+
+
+#pet-info{
+
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border:2px solid black;
+
+}
+#more-pets-info{
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  border:2px solid black;
+  
+}
+#more-pets-info li{
+  padding-top: 20px;
+  text-align: center;
+}
+
+
+#pet-image{
+  text-align: center;
+  margin: 0 auto;
+}
+#pet-image > img{
+  margin: 0 auto;
+ 
+  border: 2px solid black;
+  border-radius: 20px;
+  height: 300px;
+  width: 90%;
+  max-width: 500px;
+  
+}
+
+
+
+
+
+#pet-supply-foursquare{
+position:relative;
+  width: 80%;
+  max-width: 800px;
+  margin: 0 auto;
+  
+
+  
+}
+#pet-name{
+  text-align: center;
+  font-size: 20px;
+  
+}
+.more-btn{
+  float: right;
+  height: 13px;
+  font-size: 10px;
+}
+.next-pg-btn{
+  text-align: center;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  height: 13px;
+  font-size: 10px;
+}
+
+
+#pet-supply{
+    position:absolute; 
+    left:0%;
+    width:50%; 
+   
+ border:2px solid black;
+  
+  
+}
+
+#foursquare-info{
+  position:absolute; 
+  left:50%; 
+  width:50%; 
+ border:2px solid black;
+
+}
+
+@media only screen and (max-width : 500px) {
+  
+  #foursquare-info{
+    position: relative;
+    width: 100%;
+    left: auto;
+  }
+  #pet-supply{
+    position: relative;
+    left: auto;
+    width: 100%;
+  }
+  
+  #more-pets-info ul{
+    text-align: center;
+    margin: 0 auto;
+  columns: 1;
+  list-style: none;
+}
+}

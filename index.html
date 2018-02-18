@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <title>repl.it</title>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+    <link href="index.css" rel="stylesheet" type="text/css" />
+    <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>  
+  </head>
+  <body>
+    <div id='navigation'><ul>
+      <li>Search | </li>
+      
+      <li>Supply-List | </li>
+      <li>Find pet stores</li>
+      </ul></div>
+      
+    <div id="pet-search">
+      <h1>ADOPT DON'T SHOP!</h1>
+      <p>Each year, 2.7 million adoptable dogs and cats are euthanized in the United States, simply because too many pets come into shelters and too few people consider adoption when looking for a pet. Animal shelters and rescue groups are brimming with happy, healthy pets just waiting for someone to take them home. Find your's today!</p>
+      
+      <h4>Enter your location below</h4>
+          <form action="#" class="search">
+            <label for="query"></label>
+            <input type="text" class="js-query" >
+            <button type="submit" id="submit" >Search</button>
+            <input type="radio" class="sex" name="gender" value="F">female
+            <input type="radio" class="sex" name="gender" value="M">male
+            <section>
+              <label>What age do you prefer?</label>
+              <select id="agepicker" required>
+                <option value="Baby">Baby</option>
+              <option value="Young">Young</option>
+              <option value="Adult">Adult</option>
+              <option value="Senior">Senior</option>
+              </select></section>
+          </form>
+    </div>
+    
+    
+    
+    
+    
+    <div id='pet-info'>
+       <div class="results" role="main" >
+         <div id='pet-name'>Pet Name:  <span class="name"></span><span class='more-btn'> <button type='button' id="more-pets">More Pets </button></span> </div>
+         
+
+  <div id='pet-image'>
+     
+    </div>
+   
+   
+   <div id='pet-details'>
+    <div id='pet-id'>
+    Pet Id: <span class="petId"></span></div>
+    <div id='pet-sex'>
+    Pet Sex: <span class="petSex"></span></div>
+    
+    <div id='pet-desc'>
+    Pet Description: <span class="desc"></span></div>
+   </div>
+   
+   </div>
+    </div>
+    <div id='more-pets-info'><h1>More Pets in your Area</h1>
+    <ul class="more-pets-list-ul"></ul>
+    <div class='next-pg-btn'> <button type='button' id="next-pg-bttn">Next Page Of Pets</button></div>
+    </div>
+    
+    
+    
+   <div id='pet-supply-foursquare'>
+
+ <div id='pet-supply'>
+   <h1>SUPPLY LIST</h1>
+    <ul>
+      <li>Collar & leash</li>
+      <li>Crates and containment</li>
+      <li>Dog bed</li>
+      <li>Food and water bowls</li>
+      <li>Food, treats</li>
+      <li>Grooming supplies</li>
+      <li>Identification</li>
+      <li>Toys</li>
+    </ul></div>
+    
+    <div id='foursquare-info'><H1>CLOSEST PET SHOPS</H1></div>
+    
+    </div>
+ 
+ 
+    
+  <script src="index.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+  </body>
+</html>
