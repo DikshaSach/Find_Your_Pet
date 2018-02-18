@@ -10,12 +10,22 @@ body{
 }
 
 #more-pets-info ul{
-  columns: 5;
+  columns: 3;
   list-style: none;
 }
 
- li{
+.more-pets-list-ul li{
   display: none;
+}
+
+.default-image img{
+  height: 100px;
+  width: 100px;
+}
+
+.default-image{
+  height: 100px;
+  width: 100px;
 }
 
 
@@ -33,6 +43,12 @@ body{
 #navigation li{
   display: inline-block;
 
+}
+
+.pet-details img{
+  height: 100px;
+  width: 100px;
+  
 }
 
 #pet-search{

@@ -1,22 +1,18 @@
-
+console.log('ready');
 $('.search').submit(function querySearch(e) {
   e.preventDefault();
   userquery();
-
-  });
+});
 
 
 function userquery() {
- 
+  console.log('userquery ran');
         const searchedVal = $('.js-query').val();
         const genderr = $('input[name=gender]:checked', '.search').val();
         const agepicker = $('#agepicker').val();
-    
         runpetdata(searchedVal, genderr, agepicker, function(data) {
-       
           displayRandomPet(data);
           displayPetList(data);
-           
         });
     }
     
@@ -34,7 +30,7 @@ function userquery() {
                 format: 'json',
                 sex: genderr,
                 age: agepicker,
-                count: 100,
+                count: 200,
 
 
             },
@@ -52,23 +48,23 @@ var petDataArr = [];
 function newpetfunc(response) {
 
   console.log('newPetFunction ran --> created new pet Array');
-  for(var i=0; i<100; i++){
+  for(var i=0; i<200; i++){
      var pet = {
       name: response.petfinder.pets.pet[i].name.$t,
       sex: response.petfinder.pets.pet[i].sex.$t,
       id: response.petfinder.pets.pet[i].id.$t,
       description: response.petfinder.pets.pet[i].description.$t,
-      thumbnail: getPicture(i,'pnt', response),
+      thumbnail: getPicture(i,'pn', response),
      picture: getPicture(i,'x', response)
     } 
-    //created 100 pet objects.
+    //created 200 pet objects.
     petDataArr.push(pet);
    }
 }
 
 function displayRandomPet(data) {
  console.log('displayRandomPet function ran --> displaying random Pet');
-  var random = Math.floor((Math.random() * 100) + 0);
+  var random = Math.floor((Math.random() * 200) + 0);
   var currentPet = petDataArr[random];
    $('.name').html(currentPet.name);
   $('.petSex').html(currentPet.sex);
@@ -76,6 +72,7 @@ function displayRandomPet(data) {
   $('.desc').html(currentPet.description);
   var petImg = document.createElement('img');
   petImg.src = currentPet.picture;
+ 
  // console.log($('#pet-image').html()); 
    $('#pet-image').html(petImg.outerHTML);
 }
@@ -89,6 +86,7 @@ function displayClickedPetInfo(x, petDataArr){
   $('.desc').html(clickedPet.description);
   var petImg = document.createElement('img');
   petImg.src = clickedPet.picture;
+  
  // console.log($('#pet-image').html()); 
    $('#pet-image').html(petImg.outerHTML);
     $('#more-pets-info').hide();
@@ -99,31 +97,23 @@ function displayClickedPetInfo(x, petDataArr){
 
 function displayPetList(data) {
   console.log('displayPetList function ran --> display multiple random pets');
-  for (var i = 0; i <10; i++) {
-  var testingImg = document.createElement('img');
-  testingImg.src = petDataArr[i].thumbnail;
-  $('#more-pets-info ul').append(`<li value= ` + i + ` class="pet-details-default" >` + petDataArr[i].name +  testingImg.outerHTML + `</li>`);
-  }
+$('#more-pets-info h1:first-child').after(`<p> Was that pet not cute enough for you? Click this to see even more adorable pets.</p>`);
  petListClick();
  showMorePets(data);
 }
 
-
-
-// better way to implement this
 function showMorePets(data){
-  
- 
-    for(var i=11; i<data.length; i++){
+    for(var i=0; i<data.length; i++){
      var testingImg = document.createElement('img');
   testingImg.src = petDataArr[i].thumbnail;
   $('#more-pets-info ul').append(`<li value= ` + i + ` class="pet-details" >` + petDataArr[i].name  + testingImg.outerHTML + `</li>`);
   }
    $('#next-pg-bttn').on('click', function(){
-      lastVisible = $('li:visible:last').index()+1;
-    if(lastVisible >= $('li').length) lastVisible = 0;
-    $('li').hide();
-    $toShow = $('li:hidden').slice(lastVisible,lastVisible+20);
+     $('#more-pets-info p').remove();
+      lastVisible = $('.more-pets-list-ul li:visible:last').index()+1;
+    if(lastVisible >= $('.more-pets-list-ul li').length) lastVisible = 0;
+    $('.more-pets-list-ul li').hide();
+    $toShow = $('.more-pets-list-ul li:hidden').slice(lastVisible,lastVisible+10);
     $toShow.show() 
 });
 }
