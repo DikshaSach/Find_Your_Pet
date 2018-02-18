@@ -9,6 +9,12 @@ body{
  background-size: cover;  */
 }
 
+.pet-title{
+  font-weight: bold;
+}
+.pet-results{
+  font-weight: normal;
+}
 #more-pets-info ul{
   columns: 3;
   list-style: none;

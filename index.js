@@ -66,6 +66,7 @@ function displayRandomPet(data) {
  console.log('displayRandomPet function ran --> displaying random Pet');
   var random = Math.floor((Math.random() * 200) + 0);
   var currentPet = petDataArr[random];
+  $('#link-pet').html(`<a href='https://www.petfinder.com/petdetail/` +currentPet.id + `'>Curious about ` + currentPet.name+ `? Find more Info Here! </a>`)
    $('.name').html(currentPet.name);
   $('.petSex').html(currentPet.sex);
   $('.petId').html(currentPet.id);
@@ -84,6 +85,7 @@ function displayClickedPetInfo(x, petDataArr){
   $('.petSex').html(clickedPet.sex);
   $('.petId').html(clickedPet.id);
   $('.desc').html(clickedPet.description);
+   $('#link-pet').html(`<a href='https://www.petfinder.com/petdetail/` +clickedPet.id + `'>Curious about ` + clickedPet.name+ `? Find more Info Here! </a>`)
   var petImg = document.createElement('img');
   petImg.src = clickedPet.picture;
   
