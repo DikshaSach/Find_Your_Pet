@@ -2,17 +2,28 @@ console.log('ready');
 $('.search').submit(function querySearch(e) {
   e.preventDefault();
   userquery();
+  petDataArr = [];
+  $('.more-pets-list').empty();
+  $('#pet-info').show();
+    //$('#more-pets-info').hide();
+   
+
 });
 
 
 function userquery() {
   console.log('userquery ran');
         const searchedVal = $('.js-query').val();
-        const genderr = $('input[name=gender]:checked', '.search').val();
+        const genderr = $('#genderpicker').val();
         const agepicker = $('#agepicker').val();
+        
         runpetdata(searchedVal, genderr, agepicker, function(data) {
+          
           displayRandomPet(data);
+       
           displayPetList(data);
+          
+          
         });
     }
     
@@ -30,7 +41,7 @@ function userquery() {
                 format: 'json',
                 sex: genderr,
                 age: agepicker,
-                count: 200,
+                count: 100,
 
 
             },
@@ -48,23 +59,38 @@ var petDataArr = [];
 function newpetfunc(response) {
 
   console.log('newPetFunction ran --> created new pet Array');
-  for(var i=0; i<200; i++){
+  for(var i=0; i<100; i++){
      var pet = {
       name: response.petfinder.pets.pet[i].name.$t,
       sex: response.petfinder.pets.pet[i].sex.$t,
       id: response.petfinder.pets.pet[i].id.$t,
       description: response.petfinder.pets.pet[i].description.$t,
       thumbnail: getPicture(i,'pn', response),
-     picture: getPicture(i,'x', response)
+     picture: getPicture(i,'x', response),
+     age: response.petfinder.pets.pet[i].age.$t,
+    breed: getBreed(i, response),
+    dogShelterId: response.petfinder.pets.pet[i].shelterId.$t
+   
     } 
     //created 200 pet objects.
     petDataArr.push(pet);
    }
 }
+function getBreed(position, response){
+  if(response.petfinder.pets.pet[position].breeds !== undefined){
+   var breedArr = response.petfinder.pets.pet[position].breeds.breed.$t;
+   return breedArr;
+   
+  } else{
+      
+      return 'this is not working';
+      
+  }
+}
 
 function displayRandomPet(data) {
  console.log('displayRandomPet function ran --> displaying random Pet');
-  var random = Math.floor((Math.random() * 200) + 0);
+  var random = Math.floor((Math.random() * 100) + 0);
   var currentPet = petDataArr[random];
   $('#link-pet').html(`<a href='https://www.petfinder.com/petdetail/` +currentPet.id + `'>Curious about ` + currentPet.name+ `? Find more Info Here! </a>`)
    $('.name').html(currentPet.name);
@@ -76,57 +102,118 @@ function displayRandomPet(data) {
  
  // console.log($('#pet-image').html()); 
    $('#pet-image').html(petImg.outerHTML);
+    petShelter(currentPet.dogShelterId);
 }
 
 function displayClickedPetInfo(x, petDataArr){
   
   var clickedPet = petDataArr[x];
-  $('.name').html(clickedPet.name);
-  $('.petSex').html(clickedPet.sex);
-  $('.petId').html(clickedPet.id);
-  $('.desc').html(clickedPet.description);
-   $('#link-pet').html(`<a href='https://www.petfinder.com/petdetail/` +clickedPet.id + `'>Curious about ` + clickedPet.name+ `? Find more Info Here! </a>`)
+  $('.clicked-pet-name').html(clickedPet.name);
+  $('.clicked-petSex').html(clickedPet.sex);
+  $('.clicked-petID').html(clickedPet.id);
+  $('.clicked-pet-desc').html(clickedPet.description);
+  
+   $('.clicked-link-pet').html(`<a href='https://www.petfinder.com/petdetail/` +clickedPet.id + `'>Curious about ` + clickedPet.name+ `? Find more Info Here! </a>`)
   var petImg = document.createElement('img');
   petImg.src = clickedPet.picture;
   
- // console.log($('#pet-image').html()); 
-   $('#pet-image').html(petImg.outerHTML);
+ 
+   $('.clicked-pet-image').html(petImg.outerHTML);
+
+    $('#pet-info').hide();
     $('#more-pets-info').hide();
-    $('#pet-info').show();
-    $('#more-pets').text('Close');
+   $('#clicked-pet-info').show('slide',{direction:'left'},500);
+  
     
 }
 
 function displayPetList(data) {
   console.log('displayPetList function ran --> display multiple random pets');
-$('#more-pets-info h1:first-child').after(`<p> Was that pet not cute enough for you? Click this to see even more adorable pets.</p>`);
- petListClick();
- showMorePets(data);
+
+   for(var y=0; y<20; y++){
+     if(typeof petDataArr[y].breed === 'undefined'){
+  petDataArr[y].breed = 'Not Stated';
+  
+}
+       var testingImg = document.createElement('img');
+  testingImg.src = petDataArr[y].thumbnail;
+  $('.more-pets-list').append(`<div class="col-xl-4 center-block" id= ` + y + `>`+ 
+  `<h3 class='pet-data-name' id= ` + y + `>` + petDataArr[y].name + `</h3>` +
+ `<div class='pet-data-image' id= ` + y + `>`+ testingImg.outerHTML + `</div>` + 
+ 
+ `<div class='pet-data-age-sex'>` + petDataArr[y].age + ` | ` +  petDataArr[y].sex + `</div>` +
+`<div class='pet-data-breed'>Breed: ` + petDataArr[y].breed + `</div>` +
+ 
+  `</div>`);
+   }
+  petListClick();
+
 }
 
-function showMorePets(data){
-    for(var i=0; i<data.length; i++){
-     var testingImg = document.createElement('img');
-  testingImg.src = petDataArr[i].thumbnail;
-  $('#more-pets-info ul').append(`<li value= ` + i + ` class="pet-details" >` + petDataArr[i].name  + testingImg.outerHTML + `</li>`);
-  }
-   $('#next-pg-bttn').on('click', function(){
-     $('#more-pets-info p').remove();
-      lastVisible = $('.more-pets-list-ul li:visible:last').index()+1;
-    if(lastVisible >= $('.more-pets-list-ul li').length) lastVisible = 0;
-    $('.more-pets-list-ul li').hide();
-    $toShow = $('.more-pets-list-ul li:hidden').slice(lastVisible,lastVisible+10);
-    $toShow.show() 
-});
-}
+
+
+
 
  function petListClick(){
-  $('#more-pets-info ul').on('click','li', function(){
-    var x = $(this).val();
-    console.log('pet value of clicked pet: ' + x);
-   return displayClickedPetInfo(x, petDataArr);
+  $('.more-pets-list').on('click','div', function(){
+
+    var x = $(this).attr('id');
+     
+    console.log('pet value of clicked petx: ' + x);
+      
+    displayClickedPetInfo(x, petDataArr);
+    
+    clickedPetShelter(x, petDataArr);
     });
  }
+
+function clickedPetShelter(x, petDataArr){
+ 
+  var clickedPetShelter = petDataArr[x];
+  debugger;
+  var petShelterId =clickedPetShelter.dogShelterId;
+
+ 
+ petShelter(petShelterId);
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
  function getPicture(position, size, response) {
@@ -150,13 +237,24 @@ function morePets() {
   $('#more-pets-info').show();
   }
 
-    
+  
+
+
+
+
+
+
+
+
+
+
 
     
 $(document).ready(function() {
   $('#more-pets-info').hide();
   $('#more-pets').on('click', morePets);
+    $('#pet-info').hide();
   
-  
+ 
 
 });

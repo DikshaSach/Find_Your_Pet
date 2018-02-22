@@ -1,1 +1,0 @@
-This is a project for Thinkful where i use PetFinder API and Foursquare API

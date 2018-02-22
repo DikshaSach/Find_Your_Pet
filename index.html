@@ -6,27 +6,41 @@
     <title>repl.it</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="index.css" rel="stylesheet" type="text/css" />
+    <link href="spinner.css" rel="stylesheet" type="text/css" />
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>  
+     
   </head>
   <body>
     <div id='navigation'><ul>
-      <li>Search | </li>
+      <li><button id="btn-search">Search</button></li>
       
-      <li>Supply-List | </li>
+      <li><button id="btn-random-pet">Random Pet</button></li>
       <li>Find pet stores</li>
       </ul></div>
-      
-    <div id="pet-search">
+     
+      <div id='main-div'>
       <h1>ADOPT DON'T SHOP!</h1>
       <p>Each year, 2.7 million adoptable dogs and cats are euthanized in the United States, simply because too many pets come into shelters and too few people consider adoption when looking for a pet. Animal shelters and rescue groups are brimming with happy, healthy pets just waiting for someone to take them home. Find your's today!</p>
+     <div id='bttn-container'><button id='ready-to-adopt' type='button'>Im ready to adopt!</button></div> 
+      </div>
       
+   
+    <div id="pet-search">
       <h4>Enter your location below</h4>
           <form action="#" class="search">
             <label for="query"></label>
             <input type="text" class="js-query" >
+            
             <button type="submit" id="submit" >Search</button>
-            <input type="radio" class="sex" name="gender" value="F">female
-            <input type="radio" class="sex" name="gender" value="M">male
+           
+            
+            <section>
+                <label>What gender do you prefer?</label>
+                <select id="genderpicker" class="genderpicker" required><option value="F">Female</option>
+                <option value="M">Male</option></select>
+                
+                
+            </section>
             <section>
               <label>What age do you prefer?</label>
               <select id="agepicker" required>
@@ -36,8 +50,12 @@
               <option value="Senior">Senior</option>
               </select></section>
           </form>
+          
     </div>
-    
+  
+   
+    <div id="test"><p>Hold on we're preparing your new fur-baby!</p>
+    <div class="lds-ripple"><div></div><div></div></div></div>
     
     
     
@@ -45,13 +63,7 @@
     <div id='pet-info'>
        <div class="results" role="main" >
          <div id='pet-name'>Meet <span class="name"></span><span class='more-btn'> <button type='button' id="more-pets">More Pets </button></span> </div>
-         
-
-  <div id='pet-image'>
-     
-    </div>
-   
-   
+         <div id='pet-image'></div>
    <div id='pet-details'>
      <div id='link-pet'></div>
     <div id='pet-id' class="pet-title">
@@ -64,13 +76,50 @@
    </div>
    
    </div>
-    </div>
-    <div id='more-pets-info'><h1>More Pets in your Area</h1>
-   
-    <ul class="more-pets-list-ul"></ul>
-    <div class='next-pg-btn'> <button type='button' id="next-pg-bttn">Next Page Of Pets</button></div>
+    
     </div>
     
+    
+    <div id='clicked-pet-info'>
+       <div class="results" role="main" >
+         <div id='pet-name'>Meet <span class="name clicked-pet-name"></span></div>
+         
+
+  <div id='pet-image' class='clicked-pet-image'>
+     
+    </div>
+   
+   
+   <div id='pet-details'>
+     <div id='link-pet' class="clicked-link-pet"></div>
+    <div id='pet-id' class="pet-title">
+    Pet Id: <br> <span class="petId pet-results clicked-petID" ></span></div>
+    <div id='pet-sex' class="pet-title ">
+    Pet Sex: <br> <span class="petSex pet-results clicked-petSex"></span></div>
+    
+    <div id='pet-desc' class="pet-title">
+    Pet Description: <br> <span class="desc pet-results clicked-pet-desc"></span></div>
+   </div>
+   
+   </div>
+   <div id="map"></div>
+    
+   <span class='more-btn'> <button type='button' id="close-clicked-pet">Close </button></span> 
+    </div>
+    
+    
+    
+    
+     
+    <div id='more-pets-info'><h1>More Pets in your Area</h1>
+   <div class="containers">
+<div class="row more-pets-list">
+  
+</div>
+   </div>
+   </div>
+ 
+     <!---
     
     
    <div id='pet-supply-foursquare'>
@@ -88,14 +137,22 @@
       <li>Toys</li>
     </ul></div>
     
-    <div id='foursquare-info'><H1>CLOSEST PET SHOPS</H1></div>
+    <div id='foursquare-info'><H1>CLOSEST PET SHOPS</H1><ul id='foursquare-ul'></ul></div>
     
     </div>
+    -->
  
  
     
   <script src="index.js"></script>
+  <script src="effects.js"></script>
+  <script src="shelter.js"></script>
+  <script src="https://maps.googleapis.com/maps/api/js?key=AIzaSyApQuSfNCAqbx36_lxj3sXoOuYTG1zl9NU&callback=initMap">
+</script>
+ 
+ 
   <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
 <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
   </body>
 </html>
