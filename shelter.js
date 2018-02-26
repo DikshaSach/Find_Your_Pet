@@ -29,8 +29,7 @@ function petShelter(petShelterId) {
  
 
 function latLongFunc(shelterData){
-    debugger;
-    
+   
   var petlat = shelterData.petfinder.shelter.latitude.$t;
    var petlong = shelterData.petfinder.shelter.longitude.$t;
     var shelterName = shelterData.petfinder.shelter.name.$t;

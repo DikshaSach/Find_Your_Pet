@@ -1,62 +1,39 @@
-$('#ready-to-adopt').on('click', function(){
-  $('#main-div').hide();
-  
-   if ($('#pet-search').is(':hidden')) {
-                   
-                   $('#pet-search').show('slide',{direction:'up'},500);
-                } 
-});
+$('.search').on('submit', function(){
 
-$('#btn-search').on('click', function(){
-  
-  
-   if ($('#pet-search').is(':hidden')) {
-                   
-                   $('#pet-search').show('slide',{direction:'up'},500);
-                } else {
-                   
-                   $('#pet-search').hide('slide',{direction:'up'},1000);
-                }
-});
+     $('.contain-bear').fadeIn('slow', function(){
+              var y = $(window).scrollTop();  //your current y position on the page
+$(window).scrollTop(y+200);
+               $('.contain-bear').delay(5000).fadeOut();
+        $('#more-pets-info').delay(5000).fadeIn("slow", function(){
+             $('html,body').animate({
+        scrollTop: $("#more-pets-info").offset().top},
+        'slow');
+        });
+            });
+ 
+})
+    
 
 
-
-
-$('.search').submit(function querySearch(e) {
-  $('#pet-search').hide();
-  $('#test').show().delay(2000).fadeOut();
-   if ($('#pet-info').is(':hidden')) {
-                   
-                   $('#test').show('slide',{direction:'left'},500);
-                   
-   }
-   
-});
-
-$('#btn-random-pet').on('click', function(){
-  
-   if ($('#pet-info').is(':hidden')) {
-                   
-                   $('#pet-info').show('slide',{direction:'left'},500);
-                   
-   }else {
-                   
-                   $('#pet-info').hide('slide',{direction:'left'},1000);
-                }
-});
 
 $('#close-clicked-pet').on('click', function (){
  $('#more-pets-info').show();
  if ($('#clicked-pet-info').is(':hidden')) {
                    
-                   $('#clicked-pet-info').show('slide',{direction:'left'},500);
+                   $('#clicked-pet-info').show();
+        
                    
    }else {
                    
-                   $('#clicked-pet-info').hide('slide',{direction:'left'},500);
-                  
-                }
+        $('#clicked-pet-info').hide('slide',{direction:'left'},500);
+        $('#more-pets-info').css("opacity", "1");
+       $('body').removeClass('stop-scrolling');
+       $('body').unbind('touchmove');
+       $('#more-pets-info').removeClass('remove-click');
+       
+    }
 });
+ 
 
 
 
