@@ -3,9 +3,9 @@ $('.search').submit(function querySearch(e) {
   e.preventDefault();
   userquery();
   petDataArr = [];
-  $('.more-pets-list').empty();
-  $('#pet-info').show();
-    //$('#more-pets-info').hide();
+    $('.more-pets-list').empty();
+    $('#more-pets-info').hide();
+  
    
 
 });
@@ -120,9 +120,17 @@ function displayClickedPetInfo(x, petDataArr){
  
    $('.clicked-pet-image').html(petImg.outerHTML);
 
-    $('#pet-info').hide();
-    $('#more-pets-info').hide();
+
+    
    $('#clicked-pet-info').show('slide',{direction:'left'},500);
+    $('#more-pets-info').css("opacity", ".1");
+    $('body').addClass('stop-scrolling');
+    $('body').bind('touchmove', function(e){e.preventDefault()});
+    $('#more-pets-info').addClass('remove-click');
+   
+    
+   
+    
   
     
 }
@@ -170,7 +178,7 @@ function displayPetList(data) {
 function clickedPetShelter(x, petDataArr){
  
   var clickedPetShelter = petDataArr[x];
-  debugger;
+
   var petShelterId =clickedPetShelter.dogShelterId;
 
  
@@ -233,7 +241,7 @@ function clickedPetShelter(x, petDataArr){
 
 function morePets() {
   console.log('morePets function ran');
-  $('#pet-info').hide();
+  //$('#pet-info').hide();
   $('#more-pets-info').show();
   }
 
@@ -251,9 +259,10 @@ function morePets() {
 
     
 $(document).ready(function() {
-  $('#more-pets-info').hide();
+ // $('#more-pets-info').hide();
   $('#more-pets').on('click', morePets);
-    $('#pet-info').hide();
+  //  $('#pet-info').hide();
+    
   
  
 

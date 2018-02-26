@@ -4,33 +4,91 @@ body{
   z-index: 0;
     width: 100%;
   height: 100%;
+    font-family: 'Unkempt', cursive;
 background-color: #EF8F7F5;
  }
- 
- 
- #map {
-        width: 100%;
-        height: 400px;
-        background-color: grey;
-      }
+.stop-scrolling {
+  height: 100%;
+  overflow: hidden;
+}
 
 
- 
- /* NAVIGATION */
- #navigation{
-  position:absolute;
-  height: 30px;
+.remove-click{
+    pointer-events:none;
+}
+
+
+/* paw print animation */
+
+.contain-bear {
+    display: none;
+    z-index: 100;
+  position: relative;
+  margin: -50px auto;
   width: 100%;
+  height: 200px;
+    margin-top: 10px;
+     overflow-y: hidden;
+    margin-left: 25%;
+}
 
-  top: 0;
-text-align: center;
+
+.cover {
+    z-index: 100;
+  position: absolute;
+  top: 0px;
    
-  
+  left: 0;
+  background: white;
+  height: 150px;
+  width: 675px;
+    overflow-y: hidden;
+  animation: walk 7s steps(7, end) infinite;
+  -webkit-animation: walk 7s steps(7, end) infinite;
 }
-#navigation li{
-  display: inline-block;
 
+@keyframes walk {
+  to {
+    transform: translateX(675px);
+  }
 }
+
+@-webkit-keyframes walk {
+  to {
+    -webkit-transform: translateX(675px);
+  }
+}
+
+
+
+
+
+
+
+
+
+
+
+  /* NAVIGATION */
+#navigation{
+position: absolute;
+width: 100%;
+margin-left: -10px;
+font-size: 40px;
+font-family: 'Chewy', cursive;
+}
+
+.dog-icon{
+  height: 70px; 
+    
+}
+
+
+
+ 
+
+ 
+
  /* PET DISPLAY */
 .more-pets-list{
   margin: 0 auto;
@@ -62,9 +120,11 @@ text-align: center;
 .col-xl-4{
 max-width: 25%;
   height: 350px;
+    
 }
 .col-xl-4:hover{
-    background-color: bisque;
+    background-color: #D1BEB0;
+    border-radius: 35px;
 }
 
 .pet-data-name{
@@ -74,6 +134,7 @@ max-width: 25%;
 .pet-data-image{
 text-align: center;
   margin: 0 auto;
+     width: 90%;
   
 }
 .pet-data-age-sex{
@@ -87,17 +148,22 @@ text-align: center;
 .more-pets-list{
     padding: 5px;
 }
-.pet-data-image{
-    width: 90%;
-}
+
 
 .more-pets-list img{
- 
-    max-height: 200px;
+ max-height: 200px;
   width: 80%;
     border: 2px solid black;
     border-radius: 10px;
 }
+.more-pets-list img:hover{
+    border-radius: 50%;
+}
+#map {
+        width: 100%;
+        height: 300px;
+        background-color: grey;
+      }
 
 
 
@@ -105,118 +171,114 @@ text-align: center;
 #main-div{
    top:0;
   left:0;
+  width: 100%;
   padding-top: 30px;
   height: 100vh;
-  background-image: url('https://i.imgur.com/3V7qlTo.jpg');
-  background-repeat: no-repeat;
-    background-size: 100% 100%;
-    background-position: center top;
-    object-fit: none;
-    object-position: 50% 50%; /* default value: image is centered*/
-  object-position: 0 0; /* positioned top left of the content box */
+ background-image: url('https://i.imgur.com/hmAuhVM.jpg');
+background-repeat: no-repeat;
+background-size: cover;
+background-position:center; 
 }
-
-
-        
-    
 #main-div h1, #main-div p{
+    font-family: 'Unkempt', cursive;
+    font-weight:400;
     color: black;
     width: 40%;
-    margin-left: 50%;
+    margin-left: 50px;
+    font-size: 23px
   
 }  
 #main-div h1{
+  
 padding-top: 10%;
+font-weight:400;
+    font-size: 40px;
    
 }
-
-#go-down{
-   
- bottom: 0;
-    position: absolute;
-}
-#bttn-container{
-    text-align: center;
+.fido{
+    
+    font-weight:700;
+    font-size: 35px;
 }
 
+
+
+/* pet search form*/
 #pet-search{
-  top:0;
-  left:0;
-background-color: #EF8F7F5;
-height: 100%;
-padding-bottom: 200px;
-overflow: auto;
-padding-top: 35px;
+background: #A0B3DB;
+width: 100%;
 text-align: center;
 margin: 0 auto;
-display:none;
-text-align: center;
+    padding-bottom: 30px;
+
+}
+#pet-search h4{
+    margin-bottom: -15px;
 }
 
-
-#test{
-  display:none;
-  top:0;
-  left:0;
- 
- width: 100%;
-  height: 100vh;
-  background-color: blue;
+#blooop span{
+    
+    display: inline-block;
 }
-#test p{
- padding-top: 40%;
-}
-/* SINGLE PET INFO */
-#pet-info{
-  padding-top: 30px;
- top:0;
-  left:0;
- 
-  
-  display:none;
-  background-color: white;
-  border-radius: 25px;
 
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-
-  
-
+/* clicked pet */
+.results{
+    margin-right:4%;
+    padding: 0;
+    position: relative;
+   
 }
 #close-clicked-pet{
-  text-align-last: center;
-    bottom: 5px;
-    
+  
+    position: absolute;
     
 }
 
 #clicked-pet-info{
-    padding-top: 30px;
+   
+    font-size: 13px;
+    
 top:0;
-  left:0;
- 
+ right: 0;
+    left: 0;
   
-  display:none;
+ display: none;
+position: fixed;
+overflow-y: scroll;
+height: 100%;
   background-color: white;
-  border-radius: 25px;
+  height: 100%;
+border: 2px dashed #D1BEB0;
+  width: 40%;
 
-  width: 100%;
-  height: 100vh;
-  margin: 0 auto;
-  
+   
+    
+}
+#pet-details{
+    margin-left: 15px;
+}
+
+
+#pet-desc{
+    height: 200px;
+    overflow-y: scroll;
+}
+#clicked-pet-info-wrapper{
+    margin: 0 auto;
+}
+.clicked-link-pet{
+  text-align: center;  
 }
 #more-pets-info{
+    font-weight: 700;
+    text-align: center;
+    display: none;
     padding-top: 30px;
   top:0;
   left:0;
  width: 100%;
- 
-  
- 
   margin: 0 auto;
-
-  
+    
 }
 #more-pets-info li{
   padding-top: 20px;
@@ -230,7 +292,7 @@ top:0;
 }
 #pet-image > img{
   margin: 0 auto;
- 
+
   border: 2px solid black;
   border-radius: 20px;
   height: 300px;
@@ -244,60 +306,70 @@ top:0;
   font-size: 20px;
   
 }
-.more-btn{
- bottom:5px;
-  height: 13px;
-  font-size: 10px;
-}
-.next-pg-btn{
-  text-align: center;
-  margin: 0 auto;
-  margin-bottom: 20px;
-  height: 13px;
-  font-size: 10px;
-}
-
-
-
-
-
-
-
-#pet-supply{
-    position:absolute; 
-    left:0%;
-    width:50%; 
-   
- border:2px solid black;
-  
-  
-}
 
 
 
 @media only screen and (max-width : 800px) {
+    #clicked-pet-info{
+        width: 80%;
+        height: 100%;
+      margin-top: 0;
+    }
     .col-xl-4{
         max-width: 33.333%
     } 
      #main-div h1, #main-div p{
         font-size: 15px;
     }
+    .fido{
+        font-size: 15px;
+    }
+     .dog-icon{
+        height: 50px;
+    }
+    #navigation{
+        font-size: 25px;
+    }
 }
 @media only screen and (max-width : 600px) {
+    #clicked-pet-info{
+        width: 100%;
+        height: 100%;
+        margin-top: 0;
+    }
     .col-xl-4{
         max-width: 50%
     }  
      #main-div h1, #main-div p{
         font-size: 15px;
     }
+     .fido{
+        font-size: 15px;
+    }
+     .dog-icon{
+        height: 40px;
+    }
+    #navigation{
+        font-size: 20px;
+    }
 }
 @media only screen and (max-width : 400px) {
   
-  #foursquare-info{
-    position: relative;
-    width: 100%;
-    left: auto;
-  }
+  #clicked-pet-info{
+        width: 100%;
+        height: 100%;
+      margin-top: 0;
+    }
+     .fido{
+        font-size: 12.4px;
+    }
+    
+    .dog-icon{
+        height: 40px;
+    }
+    #navigation{
+        font-size: 14px;
+    }
   #pet-supply{
     position: relative;
     left: auto;
