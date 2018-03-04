@@ -61,7 +61,7 @@ margin-right: auto
 }
 #paw:hover {
     opacity: .6;
-    width: 130px;
+    
 }
 
 /* PET DISPLAY */
@@ -198,14 +198,9 @@ footer {
     margin-bottom: 5px;
     background-color: #FAF3F1;
     border-radius: 5px;
-<<<<<<< HEAD
-    
     text-align: center;
-=======
     width: 100px;
-    
-    
->>>>>>> master
+
 }
 #submit:hover {
     background-color: whitesmoke;
