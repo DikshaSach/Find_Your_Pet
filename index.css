@@ -382,6 +382,11 @@ footer {
     #pet-image >img {
         width: 220px;
     }
+    #pet-image {
+        float: none;
+        text-align: center;
+        margin: 0 auto;
+    }
 }
 @media only screen and (max-width: 400px) {
     #clicked-pet-info {
