@@ -3,7 +3,7 @@ $('.search').on('submit', function () {
     $('.paw-prints').fadeIn('slow', function () {
         var y = $(window).scrollTop(); //your current y position on the page
         $(window).scrollTop(y + 200);
-        $('.paw-prints').delay(3000).fadeOut();
+       // $('.paw-prints').delay(3000).fadeOut();
         $('#more-pets-info').delay(3000).fadeIn("slow", function () {
             $('html,body').animate({
                     scrollTop: $("#more-pets-info").offset().top

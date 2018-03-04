@@ -16,14 +16,19 @@ margin: 0;
     pointer-events: none;
 }
 .paw-prints {
+   margin: 0 auto;
     display: none;
     text-align: center;
-    max-width: 80%;
+     max-width: 100%;
+   
 }
-.prints {
+.paw-prints > img {
+    display: block 
+margin-left: auto 
+margin-right: auto 
     text-align: center;
     height: auto;
-    max-width: 100%;
+    max-width: 80%;
 }
 #btn-wrapper {
     width: 40%;
@@ -193,8 +198,14 @@ footer {
     margin-bottom: 5px;
     background-color: #FAF3F1;
     border-radius: 5px;
+<<<<<<< HEAD
     
     text-align: center;
+=======
+    width: 100px;
+    
+    
+>>>>>>> master
 }
 #submit:hover {
     background-color: whitesmoke;
