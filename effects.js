@@ -37,7 +37,7 @@ $('#close-clicked-pet').on('click', function () {
         }, 200);
         $('#more-pets-info').css("opacity", "1");
         $('body').removeClass('stop-scrolling');
-        $('body').unbind('touchmove');
+        $('#more-pets-info').unbind('touchmove');
         $('#more-pets-info').removeClass('remove-click');
 
     }
