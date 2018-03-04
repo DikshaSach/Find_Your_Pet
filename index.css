@@ -59,7 +59,7 @@ margin-right: auto
         left: 0;
     }
 }
-#paw:hover {
+.no-touch #paw:hover {
     opacity: .6;
     
 }
@@ -93,7 +93,7 @@ margin-right: auto
     max-width: 25%;
     height: 350px;
 }
-.col-xl-4:hover {
+.no-touch .col-xl-4:hover {
     background-color: #d1cfcd;
     border-radius: 35px;
 }
@@ -120,7 +120,7 @@ margin-right: auto
     border: 2px solid #d1cfcd;
     border-radius: 10px;
 }
-.more-pets-list img:hover {
+.no-touch .more-pets-list img:hover {
     border-radius: 50%;
 }
 #map {
@@ -202,7 +202,7 @@ footer {
     width: 100px;
 
 }
-#submit:hover {
+.no-touch #submit:hover {
     background-color: whitesmoke;
 }
 #span-wrap span {

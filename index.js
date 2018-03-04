@@ -232,7 +232,9 @@ $(document).ready(function () {
     // $('#more-pets-info').hide();
     $('#more-pets').on('click', morePets);
     //  $('#pet-info').hide();
-
+if (!("ontouchstart" in document.documentElement)) {
+document.documentElement.className += " no-touch";
+}
 
 
 });
