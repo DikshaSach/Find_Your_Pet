@@ -243,10 +243,7 @@ footer {
 #pet-details {
     margin-left: 15px;
 }
-#pet-desc {
-    height: 300px;
-    overflow-y: scroll;
-}
+
 #clicked-pet-info-wrapper {
     margin: 0 auto;
 }
@@ -267,9 +264,13 @@ footer {
     padding-top: 20px;
     text-align: center;
 }
+
+
+
 #pet-image {
     padding-left: 10px;
-    float: left;
+    
+    text-align: center;
     padding-right: 10px;
     padding-bottom: 10px;
     margin: 0 auto;
@@ -382,11 +383,7 @@ footer {
     #pet-image >img {
         width: 220px;
     }
-    #pet-image {
-        float: none;
-        text-align: center;
-        margin: 0 auto;
-    }
+   
 }
 @media only screen and (max-width: 400px) {
     #clicked-pet-info {
@@ -403,11 +400,7 @@ footer {
     #pet-image >img {
         width: 240px
     }
-    #pet-image {
-        float: none;
-        text-align: center;
-        margin: 0 auto;
-    }
+    
     #pet-supply {
         position: relative;
         left: auto;
@@ -446,11 +439,7 @@ footer {
             margin: 0;
             height: 100vh;
         }
-        #pet-image {
-            float: none;
-            text-align: center;
-            margin: 0 auto;
-        }
+       
         #pet-search {
             font-size: 15px;
             padding: 0;
