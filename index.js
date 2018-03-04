@@ -129,7 +129,7 @@ function displayClickedPetInfo(x, petDataArr) {
     }, 200);
     $('#more-pets-info').css("opacity", ".1");
     $('body').addClass('stop-scrolling');
-    $('body').bind('touchmove', function (e) {
+    $('#more-pets-info').bind('touchmove', function (e) {
         e.preventDefault()
     });
     $('#more-pets-info').addClass('remove-click');
