@@ -5,6 +5,7 @@ $('.search').submit(function querySearch(e) {
     petDataArr = [];
     $('.more-pets-list').empty();
     $('#more-pets-info').hide();
+    $('#more-pets-info h1').empty();
 
 
 
@@ -87,7 +88,7 @@ function getBreed(position, response) {
 
     } else {
 
-        return 'this is not working';
+        return 'getBreed not working.';
 
     }
 }
