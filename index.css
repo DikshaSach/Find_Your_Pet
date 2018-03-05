@@ -156,7 +156,7 @@ footer {
     text-align-last: center;
     border-bottom: 6px solid black;
    
-    padding-top: 24vh;
+    padding-top: 21vh;
     font-weight: 400;
     font-size: 60px;
 }
@@ -406,8 +406,11 @@ footer {
     }
     #main-div h1, #main-div p {
         margin-left: 10px;
-        font-size: 16.5px;
+        font-size: 14px;
         width: 48%;
+    }
+    #main-div h1{
+        padding-top: 15vh;
     }
    
     .fido {
@@ -419,7 +422,11 @@ footer {
     @media only screen and (max-width: 320px) {
         #main-div h1,
         #main-div p {
-            font-size: 15px;
+           
+            font-size: 13.5px;
+        }
+        #main-div h1{
+            padding-top: 19vh
         }
         #paw {
             margin-top: -20px;
