@@ -57,7 +57,7 @@ function runpetdata(searchedVal, genderr, agepicker, callback) {
 var petDataArr = [];
 
 function newpetfunc(response) {
-debugger;
+
     console.log('newPetFunction ran --> created new pet Array');
     if(response.petfinder.pets === undefined){
         $('#more-pets-info h1').append('<p>No pets near you! :( <p>');
