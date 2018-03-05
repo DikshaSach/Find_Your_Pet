@@ -46,7 +46,6 @@ $('#close-clicked-pet').on('click', function () {
 
 $('#paw').on('click', function () {
     $('#pet-search').show();
-    $('#paw').removeClass("bounce");
     $('html,body').animate({
             scrollTop: $("#pet-search").offset().top
         },

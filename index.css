@@ -39,33 +39,22 @@ margin-right: auto
     text-align: center;
 }
 #paw {
-    position: relative;
+   
     margin: 0;
     padding: 0;
     height: auto;
     width: 150px;
-    
+    -webkit-transition: -webkit-transform .9s ease-in-out;
+    -ms-transition: -ms-transform .9s ease-in-out;
+    transition: transform .9s ease-in-out;
 }
-.bounce {
-    -webkit-animation: bounce 1s infinite;
-}
-@-webkit-keyframes bounce {
-    0% {
-        left: 5px;
-    }
-    25%,
-    75% {
-        left: 10px;
-    }
-    50% {
-        left: 15px;
-    }
-    100% {
-        left: 0;
-    }
-}
+
+
 .no-touch #paw:hover {
     opacity: .6;
+     transform:rotate(360deg);
+    -ms-transform:rotate(360deg);
+    -webkit-transform:rotate(360deg);
     
 }
 
@@ -145,11 +134,9 @@ footer {
 
 /* FIRST DIV WITH IMAGE */
 #main-div {
-    top: 0;
-    left: 0;
+    
     width: 100%;
-    padding-top: 30px;
-    height: 100vh;
+     height: 100vh;
     background-image: url('https://i.imgur.com/hmAuhVM.jpg');
     background-repeat: no-repeat;
     background-size: cover;
@@ -165,17 +152,19 @@ footer {
     font-size: 35px;
 }
 #main-div h1 {
-    // font-family: 'Unkempt', cursive;
+   
     text-align-last: center;
-    border-bottom: 8px solid black;
-    margin-top: 5%;
+    border-bottom: 6px solid black;
+   
+    padding-top: 5%;
     font-weight: 400;
     font-size: 60px;
 }
 .fido {
     color: #7F6F6B;
     font-weight: 700;
-    font-size: 60px;
+    font-size: 70px;
+    text-shadow: 2px 2px black;
 }
 
 /* pet search form*/
@@ -261,6 +250,9 @@ footer {
     width: 100%;
     margin: 0 auto;
 }
+#more-pets-info p{
+    font-size: 30px;
+}
 #more-pets-info li {
     padding-top: 20px;
     text-align: center;
@@ -333,14 +325,14 @@ footer {
     }
     #main-div h1,
     #main-div p {
-        font-size: 25px;
+        font-size: 24px;
     }
     .fido {
         font-size: 30px;
     }
     #paw {
         margin-left: 20px;
-        width: 80px;
+        width: 65px;
     }
 }
 @media only screen and (max-width: 600px) {
@@ -359,13 +351,13 @@ footer {
     }
     #main-div h1,
     #main-div p {
-        font-size: 25px;
+        font-size: 20px;
     }
     .fido {
         font-size: 25px;
     }
     #paw {
-        width: 80px;
+        width: 60px;
     }
 }
 @media only screen and (max-width: 500px) {
@@ -373,13 +365,13 @@ footer {
     #main-div p {
         width: 50%;
         margin-left: 8px;
-        font-size: 24px;
+        font-size: 19px;
     }
     .fido {
         font-size: 24px;
     }
     #paw {
-        width: 80px;
+        width: 48px;
     }
     #pet-image >img {
         width: 220px;
@@ -412,20 +404,17 @@ footer {
         margin-left: 10px;
         margin-right: 10px;
     }
-    #main-div h1 {
+    #main-div h1, #main-div p {
         margin-left: 10px;
-        font-size: 23px;
+        font-size: 16.5px;
         width: 48%;
     }
-    #main-div p {
-        margin-left: 10px;
-        width: 50%;
-    }
+   
     .fido {
         font-size: 21px;
     }
     #paw {
-        width: 80px;
+        width: 40px;
     }
     @media only screen and (max-width: 320px) {
         #main-div h1,
