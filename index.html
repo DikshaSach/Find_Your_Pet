@@ -7,13 +7,10 @@
     <title>Fido Finder</title>
     <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
     <link href="index.css" rel="stylesheet" type="text/css" />
-
     <script src="https://code.jquery.com/jquery-3.2.1.min.js" integrity="sha256-hwg4gsxgFZhOsEEamdOYGBf13FyQuiTwlAQgxVSNgt4=" crossorigin="anonymous"></script>
     <link href="https://fonts.googleapis.com/css?family=Lobster+Two:400,700|Unkempt:400,700" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Chewy" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Kalam:700,400" rel="stylesheet">
     <link href="https://fonts.googleapis.com/css?family=Nanum+Pen+Script" rel="stylesheet">
-    <link href="https://fonts.googleapis.com/css?family=Gloria+Hallelujah" rel="stylesheet">
+    
 </head>
 
 <body>
@@ -24,7 +21,7 @@
         <h1>FIND YOUR <span class='fido'>FIDO</span> TODAY! </h1>
         <p>Who is Fido, you ask? Fido could be any dog, in any shelter, in any city or town. Fido could be big or small, fluffy or sleek, lazy or playful—but most importantly, every Fido needs a home. Click the paw to find yours!</p>
         <div id="btn-wrapper">
-            <input type="image" id="paw" class="bounce" src="https://i.imgur.com/cy89W3z.png">
+            <input type="image" id="paw" class="bounce" src="images/find-fido.png">
         </div>
 
 
@@ -65,45 +62,24 @@
     </div>
 
     <div class="paw-prints">
-        <img class="prints" src="https://media.giphy.com/media/22PyUL97RuEGb4N4G7/giphy.gif" style="width:auto" />
-
+        <img class="prints" src="images/paw-print.gif" style="width:auto" />
     </div>
 
-
-
-
-    <div id='more-pets-info'>
+    <div id='pet-list-container'>
         <h1>Pets in your Area</h1>
         <div class="containers">
-            <div class="row more-pets-list">
+            <div class="row pet-list">
 
             </div>
         </div>
     </div>
 
-
-
-
-
-
-
-
-
-
-    <div id="clicked-pet-info-wrapper">
-
-    </div>
+  
     <div id='clicked-pet-info'>
         <div class="results" role="main">
             <span class='more-btn'><input type="image" src="https://i.imgur.com/2oCkmEi.png" id="close-clicked-pet"> </span>
             <div id='pet-name'>Meet <span class="name clicked-pet-name"></span></div>
-
-
-            <div id='pet-image' class='clicked-pet-image'>
-
-            </div>
-
-
+            <div id='pet-image' class='clicked-pet-image'></div>
             <div id='pet-details'>
                 <div id='link-pet' class="clicked-link-pet"></div>
                 <div id='pet-id' class="pet-title">
@@ -117,14 +93,9 @@
                     Pet Description:
                     <br> <span class="desc pet-results clicked-pet-desc"></span></div>
             </div>
-
-        </div>
+            </div>
         <div id="map"></div>
-
-
-
     </div>
-
 
     <footer>Created By - Diksha Sach</footer>
 
@@ -140,7 +111,7 @@
     </script>
 
 
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js" integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous"></script>
+    
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js" integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
 </body>
