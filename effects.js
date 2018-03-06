@@ -1,12 +1,11 @@
 $('.search').on('submit', function () {
-
     $('.paw-prints').fadeIn('slow', function () {
         var y = $(window).scrollTop(); //your current y position on the page
         $(window).scrollTop(y + 200);
         $('.paw-prints').delay(3000).fadeOut();
-        $('#more-pets-info').delay(3000).fadeIn("slow", function () {
+        petListContainer.delay(3000).fadeIn("slow", function () {
             $('html,body').animate({
-                    scrollTop: $("#more-pets-info").offset().top
+                    scrollTop: $("#pet-list-container").offset().top
                 },
                 'slow');
         });
@@ -17,28 +16,19 @@ $('.search').on('submit', function () {
 
 
 
-
-
-
-
-
-
 $('#close-clicked-pet').on('click', function () {
-    $('#more-pets-info').show();
+    petListContainer.show();
     if ($('#clicked-pet-info').is(':hidden')) {
-
-        $('#clicked-pet-info').show();
-
-
+       clickedPetInfo.show();
     } else {
 
-        $('#clicked-pet-info').hide("clip", {
+       clickedPetInfo.hide("clip", {
             direction: "vertical"
         }, 200);
-        $('#more-pets-info').css("opacity", "1");
+        petListContainer.css("opacity", "1");
         $('body').removeClass('stop-scrolling');
-        $('#more-pets-info').unbind('touchmove');
-        $('#more-pets-info').removeClass('remove-click');
+        petListContainer.unbind('touchmove');
+        petListContainer.removeClass('remove-click');
 
     }
 });
