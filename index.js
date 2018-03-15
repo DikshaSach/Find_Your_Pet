@@ -124,7 +124,7 @@ function displayClickedPetInfo(x, petDataArr) {
     $('.clicked-petID').html(clickedPet.id);
     $('.clicked-pet-desc').html(clickedPet.description);
 
-    $('.clicked-link-pet').html(`<a href='https://www.petfinder.com/petdetail/` + clickedPet.id + `'>Curious about ` + clickedPet.name + `? Find more Info Here! </a>`)
+    $('.clicked-link-pet').html(`<a href='https://www.petfinder.com/petdetail/` + clickedPet.id + `' target="_newtab">Curious about ` + clickedPet.name + `? Find more Info Here! </a>`)
     var petImg = document.createElement('img');
     petImg.src = clickedPet.picture;
     $('.clicked-pet-image').html(petImg.outerHTML);
