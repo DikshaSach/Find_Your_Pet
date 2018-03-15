@@ -13,9 +13,9 @@ function petShelter(petShelterId) {
 
         },
         // Here is where we handle the response we got back from Petfinder
-        success: function (shelterData) {
+        success: function(shelterData) {
             latLongFunc(shelterData);
-        },  
+        },
     });
 }
 
@@ -49,7 +49,4 @@ function loadMap(petlat, petlong, shelterName) {
     });
     infowindow.open(map, marker);
 }
-
-
-
 
