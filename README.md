@@ -1,7 +1,7 @@
 # Live Link
 https://fidofinder.netlify.com/
 # Find_Your_Pet
-Using Petfinder API and Google Maps's API to help find adoptable pets in location provided.
+Using Petfinder API and Google Maps's API to help find adoptable pets in the location provided.
 
 # Motivation
 The creation of this project was sparked by my own interest of finding adoptable pets that were relativly close to my house and to be able to get locations of shelters as well.
